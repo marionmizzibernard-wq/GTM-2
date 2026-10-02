@@ -219,22 +219,29 @@ shopHooks.addToWishlist = function (data) {
 
       items: [item]
 
+/*9. Guide des tailles */
+
+shopHooks.sizeGuideOpen = function (data) {
+
+  dataLayer.push({
+
+    event: "size_guide_open",
+
+    product_id: data.product.sku,
+
+    product_name: data.product.name
+
+  });
+
+};
+
     }ddd
 
   });
 
 };
 
-    }
-
-  });
-
-};               // Quantité supprimée
-      }
-    ]
-  }
-});
-
+ 
 
 
 
