@@ -177,6 +177,26 @@ shopHooks.couponApplied = function (data) {
 
 };
 
+/*7. Tracking des suppressions panier */
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({ ecommerce: null }); // Nettoie l'objet ecommerce précédent
+dataLayer.push({
+  event: "remove_from_cart",
+  ecommerce: {
+    items: [
+      {
+        item_id: "maillot-domicile",       // ID unique du produit (Obligatoire)
+        item_name: "Maillot domicile",  // Nom du produit (Obligatoire)
+        price: 85,                // Prix unitaire
+        item_brand: "Kopsport",      // Marque (Optionnel)
+        item_category: "Vêtements",  // Catégorie (Optionnel)
+        quantity: 1                  // Quantité supprimée
+      }
+    ]
+  }
+});
+
+
 
 
 
